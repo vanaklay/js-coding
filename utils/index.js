@@ -1,4 +1,24 @@
+export const exit = (message) => {
+  console.log(message);
+  process.exit();
+};
+
 export const getArguments = () => process.argv.slice(2);
+
+export const isAvailableArgs = (args, nbArg) => {
+  if (args.length === nbArg) return true;
+  return false;
+};
+
+export const isInt = (value) => {
+  if (Number.isNaN(parseInt(value))) return false;
+  return parseInt(value);
+};
+
+export const isPositivInt = (value) => {
+  if (value > 0) return true;
+  return false;
+};
 
 /**
  *
