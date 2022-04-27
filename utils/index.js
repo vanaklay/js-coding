@@ -5,6 +5,14 @@ export const exit = (message) => {
 
 export const getArguments = () => process.argv.slice(2);
 
+export const getIntegers = (args, errorMessage) => {
+  const numbers = args.map((num) => isInt(num));
+  const verifiedNumbers = numbers.filter((num) => typeof num === 'number');
+
+  if (numbers.length === verifiedNumbers.length) return verifiedNumbers;
+  return exit(errorMessage);
+};
+
 export const isAvailableArgs = (args, nbArg) => {
   if (args.length === nbArg) return true;
   return false;
