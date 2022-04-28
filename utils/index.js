@@ -13,9 +13,19 @@ export const getIntegers = (args, errorMessage) => {
   return exit(errorMessage);
 };
 
+export const getValueSplitted = (value, selector, errorMessage) => {
+  if (!value || !value.includes(selector)) exit('error');
+  return value.split(selector);
+};
+
 export const isAvailableArgs = (args, nbArg) => {
   if (args.length === nbArg) return true;
   return false;
+};
+
+export const isChar = (value) => {
+  if (!Number.isNaN(parseInt(value))) return false;
+  return value;
 };
 
 export const isInt = (value) => {
