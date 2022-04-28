@@ -10,9 +10,7 @@ const getHourAndMinutes = (value) => {
 
   if (valueSplitted.length > 2) exit('error');
 
-  const integers = getIntegers(valueSplitted, 'error');
-  const hour = integers[0];
-  const minutes = integers[1];
+  const [hour, minutes] = getIntegers(valueSplitted, 'error');
 
   if (
     (typeof hour !== 'number' && typeof minutes !== 'number') ||

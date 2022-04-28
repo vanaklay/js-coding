@@ -11,12 +11,10 @@ const getHourAndMinutes12 = (value) => {
   if (valueSpitted.length > 2) exit('error');
 
   const ref = valueSpitted[1].slice(2);
-  const integers = getIntegers(
+  const [hour, minutes] = getIntegers(
     [valueSpitted[0], valueSpitted[1].slice(0, 2)],
     'error'
   );
-  const hour = integers[0];
-  const minutes = integers[1];
   if (
     (typeof hour !== 'number' && typeof minutes !== 'number') ||
     (hour === 12 && ref === 'AM') ||
