@@ -13,6 +13,13 @@ export const getIntegers = (args, errorMessage) => {
   return exit(errorMessage);
 };
 
+export const getValidValue = () => {
+  const args = getArguments();
+  if (!isAvailableArgs(args, 1)) exit('error');
+
+  return args[0];
+};
+
 export const getValueSplitted = (value, selector, errorMessage) => {
   if (!value || !value.includes(selector)) exit('error');
   return value.split(selector);
@@ -29,6 +36,8 @@ export const isChar = (value) => {
 };
 
 export const isInt = (value) => {
+  const found = value.match(/\D+/);
+  if (found?.length > 0) return false;
   if (Number.isNaN(parseInt(value))) return false;
   return parseInt(value);
 };

@@ -1,17 +1,9 @@
 import {
-  getArguments,
-  isAvailableArgs,
+  getValidValue,
   getIntegers,
   exit,
   getValueSplitted,
 } from '../utils/index.js';
-
-const getValidValue = () => {
-  const args = getArguments();
-  if (!isAvailableArgs(args, 1)) exit('error');
-
-  return args[0];
-};
 
 const getHourAndMinutes = (value) => {
   const valueSplitted = getValueSplitted(value, ':', 'error');
