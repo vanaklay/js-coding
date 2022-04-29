@@ -25,6 +25,11 @@ export const getValueSplitted = (value, selector, errorMessage) => {
   return value.split(selector);
 };
 
+export const hasMinimumArg = (args, nbArg) => {
+  if (args.length > nbArg - 1) return true;
+  return false;
+};
+
 export const isAvailableArgs = (args, nbArg) => {
   if (args.length === nbArg) return true;
   return false;
