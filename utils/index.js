@@ -30,6 +30,15 @@ export const getValidValue = () => {
   return args[0];
 };
 
+export const getValidString = () => {
+  const args = getArguments();
+  if (!isNArgs(args, 1)) exit('error');
+
+  const string = isString(args[0]);
+  if (!string) exit('error');
+  return string;
+};
+
 export const getValueSplitted = (value, selector, errorMessage) => {
   if (!value || !value.includes(selector)) exit('error');
   return value.split(selector);
