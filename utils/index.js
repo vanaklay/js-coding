@@ -79,6 +79,11 @@ export const isNArgs = (args, num) => {
   return false;
 };
 
+export const isString = (value) => {
+  if (!isNaN(parseInt(value))) return false;
+  return value;
+};
+
 /**
  *
  * @param {number} start
