@@ -1,20 +1,4 @@
-import {
-  getArguments,
-  isNArgs,
-  exit,
-  isInt,
-  isPositivInt,
-} from '../utils/index.js';
-
-const getValidValue = () => {
-  const args = getArguments();
-  if (!isNArgs(args, 1)) return exit('error');
-
-  const value = isInt(args[0]);
-  if (!value || !isPositivInt(value)) return exit('error');
-
-  return value;
-};
+import { getValidValue } from '../utils/index.js';
 
 const fibonacciByIteration = (value) => {
   let n1 = 0; // start

@@ -13,6 +13,16 @@ export const getIntegers = (args, errorMessage) => {
   return exit(errorMessage);
 };
 
+export const getOneValue = () => {
+  const args = getArguments();
+  if (!isNArgs(args, 1)) return exit('error');
+
+  const value = isInt(args[0]);
+  if (!value || !isPositivInt(value)) return exit('error');
+
+  return value;
+};
+
 export const getValidValue = () => {
   const args = getArguments();
   if (!isAvailableArgs(args, 1)) exit('error');
@@ -49,6 +59,18 @@ export const isInt = (value) => {
 
 export const isPositivInt = (value) => {
   if (value > 0) return true;
+  return false;
+};
+
+export const isPrime = (value) => {
+  if (value > 1) {
+    for (let i = 2; i < value; i++) {
+      if (value % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
   return false;
 };
 
