@@ -52,6 +52,11 @@ export const isPositivInt = (value) => {
   return false;
 };
 
+export const isNArgs = (args, num) => {
+  if (args?.length === num) return true;
+  return false;
+};
+
 /**
  *
  * @param {number} start
