@@ -13,6 +13,11 @@ export const getIntegers = (args, errorMessage) => {
   return exit(errorMessage);
 };
 
+export const getNumbers = (args, minimum = 2) => {
+  if (!hasMinimumArg(args, minimum)) exit('error');
+  return getIntegers(args, 'error');
+};
+
 export const getOneValue = () => {
   const args = getArguments();
   if (!isNArgs(args, 1)) return exit('error');
@@ -60,7 +65,7 @@ export const isChar = (value) => {
 };
 
 export const isInt = (value) => {
-  const found = value.match(/\D+/);
+  const found = value.match(/-\D+/);
   if (found?.length > 0) return false;
   if (Number.isNaN(parseInt(value))) return false;
   return parseInt(value);
