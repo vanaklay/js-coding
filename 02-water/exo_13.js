@@ -1,5 +1,9 @@
 import { getValidList } from '../utils/index.js';
 
+// Compare 1 to 1 and swap if the one on the right is smaller
+// if there has been at least one permutation, the sorting starts again until there are no more permutations
+// Big O: O(n^2) because we use loop inside loop
+
 // Mutated list
 const bubbleSort = (numbers) => {
   let hasPermuted = true;
