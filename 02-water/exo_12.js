@@ -1,9 +1,4 @@
-import { getArguments, getNumbers } from '../utils/index.js';
-
-const getValidList = () => {
-  const args = getArguments();
-  return getNumbers(args);
-};
+import { getValidList } from '../utils/index.js';
 
 const getMinimumDistance = (numbers) => {
   const sortedNumbers = numbers.sort((a, b) => a - b);

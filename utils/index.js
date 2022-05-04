@@ -28,6 +28,11 @@ export const getOneValue = () => {
   return value;
 };
 
+export const getValidList = () => {
+  const args = getArguments();
+  return getNumbers(args);
+};
+
 export const getValidValue = () => {
   const args = getArguments();
   if (!isAvailableArgs(args, 1)) exit('error');
