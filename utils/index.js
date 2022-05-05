@@ -1,4 +1,4 @@
-export const exit = (message) => {
+export const exit = (message = '') => {
   console.log(message);
   process.exit();
 };
