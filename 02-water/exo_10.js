@@ -1,4 +1,4 @@
-import { getArguments, isNArgs, exit } from '../utils/index.js';
+import { getArguments, isNArgs, exit, range } from '../utils/index.js';
 
 const getValidNumbers = () => {
   const args = getArguments();
@@ -20,13 +20,7 @@ const main = () => {
     a = b;
     b = temp;
   }
-
-  const result = [];
-  for (let i = a; i < b; i++) {
-    result.push(i);
-  }
-
-  return result.join(' ');
+  return range(a, b).join(' ');
 };
 
 console.log(main());
